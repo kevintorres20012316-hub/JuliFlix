@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>JuliFlix — Nuestra Película</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="vignette"></div>
+<div id="grain"></div>
+
+<!-- ================= SPLASH ================= -->
+<section id="screen-splash" class="screen active">
+  <div class="particle-layer" id="particles-splash"></div>
+  <div class="logo">Juli<span>Flix</span></div>
+  <p class="tagline">una historia real, en cartelera para siempre</p>
+  <button class="play-btn" id="btn-play" aria-label="Reproducir">
+    <span class="tri"></span> Reproducir
+  </button>
+  <div class="splash-hint">Basada en Kevin Torres &amp; Julissa Ochoa</div>
+</section>
+
+<!-- ================= INTRO CINEMATICA ================= -->
+<section id="screen-intro" class="screen">
+  <button class="skip-intro" id="btn-skip">Saltar intro ›</button>
+  <div class="particle-layer" id="particles-intro"></div>
+
+  <div class="intro-step" id="intro-1">
+    <div class="intro-logo">Juli<span style="color:var(--gold)">Flix</span></div>
+  </div>
+
+  <div class="intro-step" id="intro-2">
+    <div class="eyebrow">Protagonistas</div>
+    <div class="names-wrap">
+      <span class="protagonist one">Kevin Torres</span>
+      <span class="amp">&amp;</span>
+      <span class="protagonist two">Julissa Ochoa</span>
+    </div>
+  </div>
+
+  <div class="intro-step" id="intro-3">
+    <p class="based-on">Basado en una historia real <span class="heart-emoji">❤️</span></p>
+  </div>
+</section>
+
+<!-- ================= CATALOGO / ESCENAS ================= -->
+<section id="screen-catalog" class="screen">
+  <div class="catalog-header">
+    <h1 class="catalog-title">Nuestra <span>Película</span></h1>
+    <p class="catalog-sub">Cada escena es un capítulo de lo nuestro. Elige uno para reproducirlo.</p>
+    <div class="film-rule">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="scene-grid" id="scene-grid"></div>
+
+  <div class="to-ending-wrap">
+    <button class="ghost-btn" id="btn-to-ending">Ir al final de la película</button>
+  </div>
+</section>
+
+<!-- ================= DETALLE DE ESCENA ================= -->
+<section id="screen-scene" class="screen">
+  <div class="filmstrip top"></div>
+  <button class="back-catalog" id="btn-back-catalog">‹ Volver al catálogo</button>
+  <div class="scene-detail-inner">
+    <div id="detail-media"></div>
+    <div class="scene-detail-icon" id="detail-icon"></div>
+    <div class="scene-detail-eyebrow" id="detail-eyebrow"></div>
+    <h2 class="scene-detail-title" id="detail-title"></h2>
+    <p class="scene-detail-date" id="detail-date"></p>
+    <p class="scene-detail-text" id="detail-text"></p>
+
+    <div class="scene-nav">
+      <button class="nav-btn" id="btn-prev">‹ Anterior</button>
+      <button class="nav-btn" id="btn-next">Siguiente ›</button>
+    </div>
+  </div>
+
+  <div class="filmstrip bottom"></div>
+</section>
+
+<!-- ================= FINAL ================= -->
+<section id="screen-ending" class="screen">
+  <div class="particle-layer" id="particles-ending"></div>
+  <h2 class="continues">Continuará...</h2>
+  <p class="ending-question">¿Aceptas seguir escribiendo esta historia conmigo?</p>
+  <button class="always-btn" id="btn-always">❤️ SIEMPRE</button>
+  <p class="ending-response" id="ending-response">Y así, escena tras escena, seguiremos rodando esta película juntos.</p>
+</section>
+
+<!-- ================= LIGHTBOX (zoom de fotos/videos) ================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">✕</button>
+  <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="Anterior">‹</button>
+  <div class="lightbox-media" id="lightbox-media"></div>
+  <button class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="Siguiente">›</button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<button class="sound-toggle" id="sound-toggle" aria-label="Activar música ambiente" title="Música ambiente">🔈</button>
+
+<script src="script.js"></script>
+</body>
+</html>
